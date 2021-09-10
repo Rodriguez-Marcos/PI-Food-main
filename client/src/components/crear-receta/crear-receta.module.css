@@ -1,0 +1,130 @@
+:root {
+    --main-btn-color: rgb(255 165 0);
+}
+
+textarea, input > form {
+    width: 300px;
+}
+.dietasForm{
+    background-color: orange;
+    display: inline-block;
+    margin: 5px;
+    border-color: rgb(87, 87, 87);
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 4px;
+}
+.dietasForm:hover{
+    cursor: pointer;
+}
+.labelDietas{
+    cursor: pointer;
+}
+
+
+.liDietas{
+    display: inline;
+    background: none;
+    width: auto;
+}
+.puntuacion, .salud{
+    width: 50px;
+    display: inline-block;
+    
+}
+
+.btn {
+    margin:10px;
+    background-color: var(--main-btn-color);
+    border: solid 2px #3b663b;
+    border-radius: 5px;
+}
+.btn:hover{
+    cursor: pointer;
+}
+
+.divDietas{
+    width: 401px;
+    min-width: 401px;
+    display: inline-block;
+
+}
+
+.divPadre{
+    min-width: 98vw;
+    min-height: 89vh;
+    background: var(--main-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 56px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tituloForm {
+    font-family: 'Ultra', serif;
+    color: rgb(252, 247, 241);   
+    text-shadow: -3px 1px 1px rgb(0 0 0);
+    position: absolute;
+    font-size: 23px;
+    margin: 7px 5px;
+    padding: 5px;
+    z-index: 1;
+    width: 373px;
+    height: 284px;
+    overflow: hidden;
+}
+
+.imagenForm{
+    overflow: hidden;
+    filter: brightness(70%);
+
+}
+
+input[type=checkbox] {
+    position: relative;
+      cursor: pointer;
+}
+input[type=checkbox]:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    background-color: orange;
+}
+input[type=checkbox]:checked:after {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 2px;
+    left: 6px;
+}
+
+.nombre {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 0px solid #1C6EA4;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+textarea {
+    outline: none;
+}
+.url {
+    width: 100%;
+    margin-bottom: 10px;
+}

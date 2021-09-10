@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+.h5{
+}
+.div{
+    display: inline-block;
+    width: 329px;
+    height: 330px;
+    margin: 20px 60px;
+    background-color: rgb(216, 139, 23);
+    cursor: pointer;
+    position: relative;
+    border-radius: 12px;
+    color: rgb(124, 11, 11);
+    box-shadow: -18px 14px 20px 0px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -18px 14px 20px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: -18px 14px 20px 0px rgba(0,0,0,0.75);
+   
+    animation: shake-baidu 2s ease 0s infinite;
+    animation-play-state: paused;
+}
+
+  .div:hover {
+    animation: all 250ms;
+  }
+  @keyframes shake-baidu {
+    from    { transform: rotate(0deg); }
+    4%      { transform: rotate(5deg); }
+    29%     { transform: rotate(-5deg); }
+    37.5%   { transform: rotate(5deg); }
+    46%     { transform: rotate(-5deg); }
+    50%,to  { transform: rotate(0deg); }
+}
+.titulo{
+    
+    font-family: 'Ultra', serif;
+    color: rgb(252, 247, 241);   
+    text-shadow: -3px 1px 1px rgb(0 0 0);
+    position: absolute;
+    font-size: 23px;
+    margin: inherit;
+    margin-top: 20px;
+    z-index: 1;
+
+
+}
+
+.divPadre{
+    min-width: 98vw;
+    min-height: 89vh;
+    background: var(--main-bg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin-top: 56px;
+    text-align: center;
+    
+}
+
+.tipos{
+    font-size: 12px;
+    margin: 0px 6px;
+    margin-top: 0px;
+    margin-bottom: 4px;
+}
+
+.img{
+    padding: 10px;
+    border-radius: 20px;
+    width: 312px;
+    height: 231px;
+    overflow: hidden;
+    filter: brightness(70%);
+}
+
+.saludable{
+    font-size: 12px;
+    display: inline-block;
+}
+
+.p{
+    margin-top: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+}

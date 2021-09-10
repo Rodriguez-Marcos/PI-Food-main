@@ -1,0 +1,47 @@
+.div {
+}
+.btnBack{
+  position: fixed;
+  left: 5px;
+  top: 50%;
+  text-decoration: none;
+  z-index: 100;
+  padding: 0px 0.75rem 0.75rem 0.75rem;
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+  font-size: 3rem;
+  font-weight: bold;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 100%;
+}
+
+.btnNext{
+  position: fixed;
+  right: 5px;
+  top: 50%;
+  text-decoration: none;
+  z-index: 100;
+  padding: 0px 0.75rem 0.75rem 0.75rem;
+  background-color: #04AA6D;
+  color: white;
+  border: none;
+  font-size: 3rem;
+  font-weight: bold;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 100%;
+}
+
+.btnBack:hover {
+    background-color: #ddd;
+    color: black;
+    cursor: pointer;
+  }
+  
+  .btnNext:hover {
+    background-color: #ddd;
+    color: black;
+    cursor: pointer;
+  }

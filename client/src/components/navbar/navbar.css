@@ -1,0 +1,146 @@
+:root {
+    --main-bg-color: rgb(255, 141, 79);
+  }
+.navbar {
+    height: 56px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: fixed;
+    z-index: 1000;
+}
+
+.navbar nav {
+    height: 100%;
+    text-decoration: none;
+    top:0px;
+}
+
+input {
+    outline: none;
+}
+#busqueda{
+    width: 20rem
+}
+.filterContainer{
+    min-width: 21rem;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.busqueda {
+    min-width: 230.8px;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    height: 100%;
+}
+
+.list-item {
+    margin: 0;
+    display: flex;
+    height: 100%;
+    width: auto;
+    align-items: center;
+}
+
+.list-item a {
+    color: white;
+    height: 100%;
+    padding: 16px 10px;
+    border-bottom: 4px solid transparent;
+}
+
+.list-item a:hover,
+.list-item a.active {
+    background-color: #808080;
+    color: white;
+}
+
+.nav li{
+    list-style: none;
+}
+.nav li:hover{
+    background-color: rgb(253, 156, 104);
+    padding: auto;
+}
+
+.nav > li,ul{
+    background-color: var(--main-bg-color);
+    display: block;
+    padding: 0;
+    width: 190px;
+    height: 25px;
+    z-index: 10;
+    text-align: center;
+}
+
+ul > li > ul{
+    display: none;
+    width: fit-content;
+}
+
+.nav > li:hover > ul{
+    display: block;
+    position: absolute;
+    float: left;
+}
+
+li > label{
+    width: fit-content;
+}
+
+.header{
+    border-radius: 99%;
+}
+
+.btn{
+    border: solid 1px rgb(165, 95, 28);
+    border-radius: 5px;
+    background-color: rgb(200, 116, 35);
+}
+
+.list-item{
+    background-color: #ff8d4f;
+}
+
+li.list-item > input[type='checkbox']:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 13px;
+    height: 13px;
+    top: 0;
+    left: 0;
+    border-radius: 2px;
+    background-color: transparent;
+}
+
+li.list-item > input[type='checkbox']:checked:after {
+    display: block;
+    width: 5px;
+    height: 10px;
+    border: solid transparent;
+    border-width: 0 2px 2px 0;
+    position: absolute;
+    top: 2px;
+    left: 6px;
+}
+
+.nav > li{
+    width: 190px;
+}
