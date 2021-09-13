@@ -28,6 +28,7 @@ export const obtenerTipos = () => {
             type: OBTENER_TIPOS,
             payload: response.data,
         });
+        await axios.get(ROUTE_RECIPES)
     };
 };
 

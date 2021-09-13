@@ -14,7 +14,6 @@
     padding-top: 100px;
     
     animation: shake-baidu 1s ease 0s infinite;
-    animation-play-state: paused;
 }
 
   .img:hover {
