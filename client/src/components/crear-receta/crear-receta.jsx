@@ -55,7 +55,7 @@ function CrearReceta({ tipos }) {
 
         var config = {
             method: 'post',
-            url: 'http://localhost:3001/recipes',
+            url: '/recipes',
             headers: {
                 'Content-Type': 'application/json'
             },
