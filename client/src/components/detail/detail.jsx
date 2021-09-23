@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { connect } from 'react-redux'
 import { getRecetas } from '../../store/actions/recipes-actions';
@@ -5,8 +6,10 @@ import style from './detail.module.css'
 
 let recipe = {};
 let pasos = [];
+let url = '';
 
 function Detail({ id, getRecetas, fullRecipes }) {
+    const [cambio, setCambio] = useState([]);
     useEffect(() => {
         getRecetas();
     }, [])
@@ -19,16 +22,17 @@ function Detail({ id, getRecetas, fullRecipes }) {
         selector.innerHTML = recipe?.resumen;
         if(recipe){
             pasos = JSON.parse(recipe.pasos);
+            setCambio(cambio+1);
+            url = recipe.url;
         }
     }, [fullRecipes])
     let selector;
 
     return (
         <div className={style.divPrincipal}>
-
             <h1>Detalle de la receta: {recipe?.nombre}</h1>
             <div style={{ display: 'block', minHeight: '230px' }}>
-                {<img className={style.imagen} alt={`recetaNro:${recipe?.id}`} src={recipe?.url} />||!recipe?.url}
+                {<img className={style.imagen} alt={`recetaNro:${id}`} src={url} />}
                 <p className={style.parrafo} id='Descripcion'></p>
             </div>
             <hr style={{ backgroundColor: 'black' }} />
