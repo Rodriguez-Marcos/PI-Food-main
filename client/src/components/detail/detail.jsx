@@ -7,15 +7,12 @@ let recipe = {};
 let pasos = [];
 
 function Detail({ id, getRecetas, fullRecipes }) {
-    const [recetas, setRecetas] = useState([]);
-
     useEffect(() => {
         getRecetas();
     }, [])
 
     useEffect(() => {
-        setRecetas(fullRecipes);
-        recipe = recetas.find(x => {
+        recipe = fullRecipes.find(x => {
             return x.id === parseInt(id);
         });
         selector = document.getElementById('Descripcion');

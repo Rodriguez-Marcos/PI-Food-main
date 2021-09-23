@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
-import { paginate } from '../../store/actions/recipes-actions';
+import React, { useEffect, useState } from 'react';
+import { getRecetas, paginate } from '../../store/actions/recipes-actions';
 import { connect } from 'react-redux';
 import RecipeCards from '../recipecard/recipecard'
 import { div, btnBack, btnNext } from './home.module.css'
 
 
-function Home({ recipes, paginate }) {
+function Home({ recipes, paginate, getRecetas }) {
     const [pagina, setPagina] = useState(9)
+    useEffect(()=>{
+        getRecetas();
+    },[])
 
 
 
@@ -21,7 +24,7 @@ function Home({ recipes, paginate }) {
     function handleNext() {
         let floor = pagina;
         let ceil = pagina + 9;
-        if (recipes[ceil + 1]) {
+        if (recipes[ceil - 8]) {
             setPagina(floor + 9);
             paginate(recipes.slice(floor, ceil));
         }
@@ -29,7 +32,7 @@ function Home({ recipes, paginate }) {
     return (
         <div className={div}>
             {recipes[pagina - 10] &&<button className={btnBack} onClick={handleBack}>«</button>}
-            {recipes[pagina + 10] &&<button className={btnNext} onClick={handleNext}>»</button>}
+            {recipes[pagina + 1] &&<button className={btnNext} onClick={handleNext}>»</button>}
             <RecipeCards />
         </div>)
 }
@@ -39,6 +42,9 @@ const mapDispatchToProps = (dispatch) => {
         paginate: recipes => {
             dispatch(paginate(recipes))
         },
+        getRecetas: () => {
+            dispatch(getRecetas())
+          },
     }
 }
 
