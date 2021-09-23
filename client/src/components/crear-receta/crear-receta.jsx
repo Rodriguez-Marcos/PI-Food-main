@@ -3,6 +3,8 @@ import { connect } from "react-redux"
 import style from './crear-receta.module.css'
 import axios from "axios";
 import { useHistory } from 'react-router-dom';
+import dotenv from 'dotenv'
+dotenv.config();
 let urlCargando = 'https://acegif.com/wp-content/uploads/loading-9.gif';
 
 function CrearReceta({ tipos }) {
@@ -51,16 +53,26 @@ function CrearReceta({ tipos }) {
             "dietas": dietas,
             "spoonacularScore": spoonacularScore,
         });
-
-
-        var config = {
+        var config
+        if(process.env.REACT_APP_API){
+        config = {
             method: 'post',
-            url: '/recipes',
+            url: process.env.REACT_APP_API + '/recipes',
             headers: {
                 'Content-Type': 'application/json'
             },
             data: data
         };
+    }else {
+        config ={
+            method: 'post',
+            url: 'http://localhost:3001/recipes',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            data: data
+        };
+    }
         if (!nombre || !descripcion || !salud || !spoonacularScore) {
             alert("faltan algunos campos")
             return 0;
