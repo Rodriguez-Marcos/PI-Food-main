@@ -28,7 +28,7 @@ function Detail({ id, getRecetas, fullRecipes }) {
 
             <h1>Detalle de la receta: {recipe?.nombre}</h1>
             <div style={{ display: 'block', minHeight: '230px' }}>
-                {!recipe?.url||<img className={style.imagen} alt={`recetaNro:${recipe?.id}`} src={recipe?.url} />}
+                {<img className={style.imagen} alt={`recetaNro:${recipe?.id}`} src={recipe?.url} />||!recipe?.url}
                 <p className={style.parrafo} id='Descripcion'></p>
             </div>
             <hr style={{ backgroundColor: 'black' }} />
