@@ -1,5 +1,5 @@
 :root {
-    --main-btn-color: rgb(255 165 0);
+    --main-btn-color: #454545;
 }
 
 textarea, input > form {
@@ -53,12 +53,12 @@ textarea, input > form {
 
 .divPadre{
     min-width: 98vw;
-    min-height: 89vh;
+    min-height: 90vh;
+    overflow: scroll;
     background: var(--main-bg);
-    background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-    margin-top: 56px;
+    margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
 }

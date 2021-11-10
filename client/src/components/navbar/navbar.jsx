@@ -3,7 +3,17 @@ import './navbar.css';
 import { coincidirRecetas, getRecetas, obtenerTipos, ordenarASC, ordenarDES, ordenarPunt } from '../../store/actions/recipes-actions';
 import { Link, useLocation, useHistory } from 'react-router-dom';
 import { connect } from 'react-redux';
+import icon from '../../images/icon-recetas.png';
+import arrowdown from '../../images/arrowdown.png';
+// method
+function toggleMenu (event) {
+  document.querySelector( ".menuppal" )?.classList.toggle("is_active");
+  document.querySelector( ".btn" )?.classList.toggle("is_active");
+  document.querySelector( ".nav" )?.classList.toggle("is_active");
+  event.preventDefault();
+}
 
+// event
 
 
 function Nav({ tipos, fullRecipes, coincidirRecetas, getRecetas, obtenerTipos,ordenarASC, ordenarDES, ordenarPunt }) {
@@ -85,36 +95,44 @@ function Nav({ tipos, fullRecipes, coincidirRecetas, getRecetas, obtenerTipos,or
   return (
     <nav className="navbar" >
       <span>
+        {location.pathname === '/recetas'?<div onClick={toggleMenu} class="hamburger">
+        	<div class="_layer -top"></div>
+        	<div class="_layer -mid"></div>
+        	<div class="_layer -bottom"></div>
+        </div>:<Link to='/recetas' className='backToHome'>
+        &#8592; Volver
+        </Link>}
         <Link to='/'>
-          Home
+          <img className={'logo'} src={icon} alt="logo" />
         </Link>
       </span>
       <div className='busqueda'>
         <form >
           <input onFocus={(e)=>handleFocus(e)} placeholder='Buscar receta por nombre' autoComplete='off' id="busqueda" type='text' onChange={(e) => handleChange(e)}></input>
         </form >{location.pathname==='/recetas'&&
-        <div className='filterContainer'>
+        <div className='filterContainer menuppal'>
         <input className={'btn'} onClick={()=>{ordenarASC()}} type='submit' value='Ordenar ASC'></input>
         <input className={'btn'} onClick={()=>{ordenarDES()}} type='submit' value='Ordenar DES'></input>
         <input className={'btn'} onClick={()=>{ordenarPunt()}} type='submit' value='Ordenar Puntuacion'></input>
         </div>}
 
       </div>
-      {location.pathname==='/recetas'&&<div className={'header'}>
+      {location.pathname==='/recetas'&&<div className='header'>
         <ul className={'nav'}>
-          <li><label>Dietas</label>
-            <ul>
+          <li className='dietsSelector'><label>Dietas</label> <img className='arrowDown' src={arrowdown} />
+            <ul >
               {tipos.map(x => {
                 return (
                   <li className={'list-item'} key={"dietas" + x.id}><input style={{backgrounColor: '#ff8d4f'}} onChange={handleChange} type="checkbox" id={x.nombre} /><label style={{padding: '10px'}} htmlFor={x.nombre}>{x.nombre}</label></li>
                 )
               })}
+              <div className='clear'></div>
             </ul>
           </li>
-        </ul>
+        </ul> 
       </div>}
       <Link to='/crear'>
-        <span>Crear Recetas</span>
+        <div className='btn createRecipe'>Crear Recetas</div>
       </Link>
     </nav>
   );
