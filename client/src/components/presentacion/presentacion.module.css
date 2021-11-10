@@ -1,11 +1,10 @@
 :root {
-    --main-bg: #6e6e6e;
+    --main-bg: #c2c2c2;
   }
 
 .div{
     height: 100vh;
     width: 100vw;
-    background: var(--main-bg);
 }
 
 .img {
