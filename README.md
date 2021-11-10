@@ -37,10 +37,10 @@ donde ``DB_USER`` es el usuario de su base de datos, ``DB_PASSWORD`` es la passw
 ## Resultados 
 ### **Sí ha completado los pasos exitosamente en su navegador deberia visualizar una aplicacion como esta:**
 
-![presentacion app](imagenes\presentacion.jpg)
+![presentacion app](https://github.com/Rodriguez-Marcos/PI-Food-main/blob/master/imagenes/home.jpg?raw=true)
 
 ### **Y haciendo click en la imagen del libro lo llevara al [listado de recetas](http://localhost:3000/recipes) que se vera algo asi:**
 
-![recetas](imagenes\home.jpg)
+![recetas](https://github.com/Rodriguez-Marcos/PI-Food-main/blob/master/imagenes/home.jpg?raw=true)
 
-### **Llegado a este punto ya podra visualizar detalles, filtrar por nombre y dietas, y crear nuevas recetas que se guardaran en la base de datos configuradas en el ``.env`` **
+### **Llegado a este punto ya podra visualizar detalles, filtrar por nombre y dietas, y crear nuevas recetas que se guardaran en la base de datos configuradas en el ``.env``**
